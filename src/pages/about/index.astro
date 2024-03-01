@@ -1,0 +1,34 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Card from "../../components/Card.astro";
+import ReactHello from "../../components/ReactHello";
+---
+
+<Layout title="About astro.">
+  <main>
+    <h1>About astro</h1>
+    <ul role="list" class="link-card-grid">
+      <Card href="/" title="Home" body="Go to home page." />
+    </ul>
+    <ReactHello className="mt-2" client:load />
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+  .link-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+    gap: 2rem;
+    padding: 0;
+  }
+</style>
+../../components/ReactHello
