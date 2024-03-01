@@ -2,6 +2,10 @@
 import Layout from "../../layouts/Layout.astro";
 import Card from "../../components/Card.astro";
 import ReactHello from "../../components/ReactHello";
+
+const response = await fetch("https://randomuser.me/api/");
+const data = await response.json();
+const randomUser = data.results[0];
 ---
 
 <Layout title="About astro.">
@@ -10,7 +14,11 @@ import ReactHello from "../../components/ReactHello";
     <ul role="list" class="link-card-grid">
       <Card href="/" title="Home" body="Go to home page." />
     </ul>
+    <h2>Render with React</h2>
     <ReactHello className="mt-2" client:load />
+    <hr class="my-4" />
+    <h2>SSR with Random User</h2>
+    <h3>{randomUser.name.first} {randomUser.name.last}</h3>
   </main>
 </Layout>
 
