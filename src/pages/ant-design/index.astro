@@ -1,0 +1,33 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ButtonSection from "./_components/ButtonSection";
+---
+
+<Layout title="About astro.">
+  <main>
+    <h1>With Antd Design</h1>
+    <p>
+      Still <a
+        href="https://github.com/withastro/astro/issues/4432"
+        target="_blank"
+        class="text-blue-500 hover:underline">not support CSS-in-JS</a
+      > for now
+    </p>
+    <h2>With client:visible</h2>
+    <ButtonSection client:visible />
+    <h2>With client:only</h2>
+    <ButtonSection client:only="react" />
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    width: 800px;
+    max-width: calc(100% - 2rem);
+    color: white;
+    font-size: 20px;
+    line-height: 1.6;
+  }
+</style>
